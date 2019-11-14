@@ -1,0 +1,29 @@
+body {
+  margin: 0 auto;
+
+}
+
+
+/* .poke-selector {
+  position: relative;
+  width: 25%;
+  border: solid 1px;
+  margin: 5%;
+  padding: 20%;
+} */
+
+/* .poke-selector:after{
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+
+} */
+
+.semiCircle {
+  background: #9e978e;
+   margin: 0 1em 1em 0;
+  display: inline-block;
+  border-bottom-left-radius: 90px;
+  border-bottom-right-radius: 90px;
+  border: solid 1px;
+}
