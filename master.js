@@ -11,6 +11,10 @@ class Trainer {
   all () {
     return this.team
   }
+  get(name){
+    // for (let i = 0; i < this.team.length; i++)
+    return this.team[name.name]
+  }
 }
 //
 class Pokemon {
