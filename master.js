@@ -5,8 +5,9 @@ class Trainer {
 
   }
 
-  equipPokemon(pTeam){
-    this.team.push(pTeam)
+  equipPokemon(teammate){
+    this.team.push(teammate)
+    console.log(`${teammate.name} has joined your party`)
   }
   all () {
     return this.team
