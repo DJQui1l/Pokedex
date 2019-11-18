@@ -28,6 +28,19 @@ class Pokemon {
   }
 }
 
+function start(){
+  let clicked = document.getElementById('lightning-bolt');
+  clicked.addEventListener("click", function() {
+		clicked.style.animation = "fade-out 1s ease-out"
+		setTimeout(() => {
+			clicked.style.display = "none"
+			console.log("it works")
+		},1000)
+  })
+}
+
+start()
+
 let t1 = new Trainer('Red')
 let poke1 = new Pokemon('bulbasaur')
 let poke2 = new Pokemon('squirtle')
