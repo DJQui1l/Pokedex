@@ -1,3 +1,9 @@
+@font-face {
+  font-family: Sun-Moon;
+  src: url("font_pack__sun_and_moon_by_mucrush_d9t8kqh.ttf");
+}
+
+
 @keyframes light-pulse {
   0%{
   filter: drop-shadow(0px 0px 6px #FFFF33);
@@ -6,15 +12,17 @@
     filter: drop-shadow(0px 0px 20px #FFFF33);
   }
 }
+
 @keyframes floating{
   0%{
   transform: translateY(0px);
 }
 
   100% {
-    transform: translateY(-20px);
+    transform: translateY(-30px);
   }
 }
+
 @keyframes fade-out{
   0%{
 opacity: 1;
@@ -22,6 +30,15 @@ opacity: 1;
 
   100% {
     opacity: 0;
+  }
+}
+@keyframes fade-in{
+  0%{
+opacity: 0;
+}
+
+  100% {
+    opacity: 1;
   }
 }
 
@@ -32,23 +49,23 @@ body {
   overflow: hidden;
 }
 
-
-/* .poke-selector {
+/*
+ .poke-selector {
   position: relative;
   width: 25%;
   border: solid 1px;
   margin: 5%;
   padding: 20%;
-} */
+}
 
-/* .poke-selector:after{
+ .poke-selector:after{
   content: "";
   display: block;
   padding-bottom: 100%;
 
-} */
+}
 
-.semiCircle {
+ .semiCircle {
   background: #9e978e;
    margin: 0 1em 1em 0;
   display: inline-block;
@@ -56,19 +73,62 @@ body {
   border-bottom-right-radius: 90px;
   border: solid 1px;
 }
+ */
 
+
+#container-grid {
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 33% 33% 33% ;
+  grid-template-areas:
+  " header header header"
+  " . lightning-bolt ."
+  " . . .";
+  grid-gap: 9px;
+}
+
+#container-grid div {
+  /* border: solid 1px;
+  border-color: red; */
+  /* padding: 2%; */
+}
+
+
+#container-grid #title {
+  grid-area: header;
+  /* color: #383838; */
+  color: #101010;
+
+  display: none;
+
+  font-family: Sun-Moon;
+  text-align: center;
+
+  width: 100%;
+  font-size: 100px;
+  margin: 7.5% 0;
+  text-shadow: 0px 0px 3px #fff000;
+}
+
+#lightningDiv {
+  padding: 2%;
+  margin: 7% 0%;
+  float:center;
+}
 #lightning-bolt{
-  /* fill :#202020; */
-  fill :#303030;
-  /* margin: 25%; */
-  position: absolute;
+  grid-area: lightning-bolt;
+  fill :#383838;
+  /* fill: #fff000; */
+
+  position: relative;
   top: 36.7%;
-  left: 50%;
+  left: 42%;
   /* filter: drop-shadow(0px 0px 6px #FFFF33); */
-  /* animation: light-pulse 1.5s infinite alternate ease-in;
-  animation: floating 3s infinite alternate ease-in-out; */
-  animation-play-state: pause;
+  /* animation: light-pulse 1.5s infinite alternate ease-in,
+   floating 3s infinite alternate ease-in-out;
+  animation-play-state: pause; */
   /* animation-delay: 3s; */
+  height: 15%;
+  width: 15%;
 
 
   /* For clean hover transition */
@@ -77,7 +137,7 @@ body {
 
 #lightning-bolt:hover{
     fill: #fff000;
-    filter: drop-shadow(0px 0px 25px #FFFF33);
+    filter: drop-shadow(0px 0px 15px #FFFF33);
     transform: translateY(-25px);
     /* animation: floating 2s infinite alternate ease-in-out;
     animation-play-state: running; */

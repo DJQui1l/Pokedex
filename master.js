@@ -9,12 +9,12 @@ class Trainer {
     this.team.push(teammate)
     console.log(`${teammate.name} has joined your party`)
   }
-  all () {
+  all() {
     return this.team
   }
   get(name){
     // for (let i = 0; i < this.team.length; i++)
-    return this.team[name.name]
+    return this.team
   }
 }
 //
@@ -28,14 +28,23 @@ class Pokemon {
   }
 }
 
+
+
+
 function start(){
-  let clicked = document.getElementById('lightning-bolt');
-  clicked.addEventListener("click", function() {
-		clicked.style.animation = "fade-out 1s ease-out"
-		setTimeout(() => {
-			clicked.style.display = "none"
+  let clicklightning = document.getElementById('lightning-bolt');
+  let clicktitle = document.getElementById('title');
+
+  clicklightning.addEventListener("click", function() {
+
+		clicklightning.style.animation = "fade-out 1s ease-out";
+
+    setTimeout(() => {
+			clicklightning.style.display = "none";
+      clicktitle.style.display = "block"
+      clicktitle.style.animation = "fade-in 1s ease-in";
 			console.log("it works")
-		},1000)
+		},1004)
   })
 }
 
