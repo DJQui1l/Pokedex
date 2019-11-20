@@ -113,9 +113,9 @@ body {
   font-family: Sun-Moon;
   text-align: center;
 
-  width: 100%;
-  font-size: 100px;
-      margin: 14.7% 0;
+  width: 70%;
+  font-size: 2300%;
+  margin: 14.7%;
   /* text-shadow: 0px 0px 3px #fff000; */
 
   /* background: -webkit-linear-gradient(#ff9900, #005aff);
@@ -167,5 +167,5 @@ body {
 #api-grid{
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: 33% 33% 33% ;
-  
+
 }
