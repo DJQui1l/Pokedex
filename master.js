@@ -78,7 +78,7 @@ const url = `https://fizal.me/pokeapi/api/v2/id/${pokeNum}.json`
 queryPokemonAPI()
 
 
-// ------------ ANIMATIONS ------------------------------
+// ------------ ANIMATIONS -------------------
 function start(){
   let clicklightning = document.getElementById('lightning-bolt');
   let clicktitle = document.getElementById('title');
@@ -90,7 +90,7 @@ function start(){
 
     setTimeout(() => {
 			clicklightning.style.display = "none";
-      clicktitle.style.display = "block"
+      clicktitle.style.display = "block";
       clicktitle.style.animation = "fade-in 1s ease-in, scale 4s ease-out";
 		},1004)
 
