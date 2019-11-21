@@ -6,6 +6,10 @@ class Trainer {
   }
 
   equipPokemon(teammate){
+
+
+
+
     this.team.push(teammate)
     console.log(`${teammate.name} has joined your party`)
   }
@@ -34,25 +38,43 @@ class Pokemon {
 
 // ----------- TRUE API POKEDEX -----------------
 
+abilityList = document.getElementById('ability-list')
+
 queryPokemonAPI = async () => {
-  // pokeNum = prompt("Enter pokemon id: ")
-const  url = `https://fizal.me/pokeapi/api/v2/id/7.json`
+  pokeNum = prompt("Enter pokemon ID: ")
+const url = `https://fizal.me/pokeapi/api/v2/id/${pokeNum}.json`
   fetch(url)
     .then( resp => {
       return resp.json()
     })
     .then( data => {
-        // console.log(data)
-        const pokemon = {
+        console.log(data)
+         let pokemon = {
+          name: data.name,
           hp: data.stats[5].base_stat,
           atk: data.stats[4].base_stat,
-          def: data.stats[3].base_stat
+          def: data.stats[3].base_stat,
+          abilities: []
         }
-        pokemon['name'] = data.name
-        console.log(pokemon)
-        })
-}
+        for (let i in data.abilities){
+        console.log(data.abilities[i].ability.name)
+        // abilities.push(data.abilities[i].ability.name)
 
+        let li = document.createElement('li')
+        li.innerText =`${data.abilities[i].ability.name}`
+        li.style.color = "white"
+        abilityList.appendChild(li)
+
+
+        }
+        // pokemon['name'] = data.name
+          // console.log(data)
+        // console.log(Pokemon)
+
+        })
+
+        // box = document.createElement()
+}
 queryPokemonAPI()
 
 
@@ -87,9 +109,9 @@ function start(){
 //-----------------------------------------------------
 start()
 
-let t1 = new Trainer('Red')
-let poke1 = new Pokemon('bulbasaur')
-let poke2 = new Pokemon('squirtle')
+// let t1 = new Trainer('Red')
+// let poke1 = new Pokemon('bulbasaur')
+// let poke2 = new Pokemon('squirtle')
 
 //
 // // -----------API STUFF--------------
