@@ -23,7 +23,7 @@ class Trainer {
 }
 //
 class Pokemon {
-  constructor(name,hp,attack,defense){
+  constructor(name){
     this.name = name
     this.hp = hp
     this.attack = attack
@@ -35,7 +35,8 @@ class Pokemon {
 // ----------- TRUE API POKEDEX -----------------
 
 queryPokemonAPI = async () => {
-const  url = `https://fizal.me/pokeapi/api/v2/id/1.json`
+  // pokeNum = prompt("Enter pokemon id: ")
+const  url = `https://fizal.me/pokeapi/api/v2/id/7.json`
   fetch(url)
     .then( resp => {
       return resp.json()
