@@ -6,24 +6,51 @@ class Trainer {
 
   }
 
+
+  statsList = document.getElementById('stats-list')
+
   equipPokemon_ID(name){
     let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        let resp = this.responseText
+    xhttp.onreadystatechange = () => { //made it an arrow function instead of anon function to keep 'this' bound to Trainer object
+      if (xhttp.readyState == 4 && xhttp.status == 200) { //checks the readystate of xhttp
+        let resp = xhttp.responseText
         let data = JSON.parse(resp)
-        var chosenPoke = new Pokemon(data.name)
+
+        // console.log(data)
+
+        let chosenPoke = new Pokemon(data.name)
         chosenPoke.name = data.name
         chosenPoke.hp = data.stats[5].base_stat
         chosenPoke.attack = data.stats[4].base_stat
         chosenPoke.defense = data.stats[3].base_stat
-        console.log(chosenPoke)
+        chosenPoke.sprites = data.sprites.front_default
+
+        // let sprite = document.createElement('img')
+        // sprite.src = `${chosenPoke.sprites}`
+        // document.getElementById('sprite-container').appendChild(sprite)
+        let gifSprite = document.getElementsByClassName('carousel-image').src = `http://www.pokestadium.com/sprites/xy/${chosenPoke.name}.gif`
+        // document.getElementById('sprite-container').appendChild(gifSprite)
+
+    //     document.addEventListener('DOMContentLoaded', function() {
+    // var elems = document.querySelectorAll('.carousel');
+    // var instances = M.Carousel.init(elems, options);
+  // });
+
 
         for (let i in data.abilities){
           let a = data.abilities[i].ability.name
-          a.replace('-',' ').charAt(0).toUpperCase()
+          // a.replace('-',' ').charAt(0).toUpperCase()
           chosenPoke.abilities.push(a)
+
+
+          let pudding = document.getElementById('ability-list')
+          pudding.innerText= `HP: ${chosenPoke.hp}`
+          abilityList.style.color= "white"
+          // abilityList.appendChild(li)
         }
+
+
+        this.team.push(chosenPoke);
       }
     }
     xhttp.open("GET", `https://fizal.me/pokeapi/api/v2/id/${name}.json`, true);
@@ -37,20 +64,17 @@ class Trainer {
   get(name){
     for (let i = 0; i < 5;i++){
       if (this.team[i] == name){
+        console.log(this.team[i])
         return this.team[i]
       }
     }
   }
 }
-//
 
 class Pokemon {
-  constructor(name,hp,attack,defense){
+  constructor(name){
     this.name = name
-    this.hp = hp
-    this.attack = attack
-    this.defense = defense
-    this.abilities = []
+    this.abilities = [] //chosenPoke.abilities.push(data.abilities[i].ability.name)
   }
 }
 
@@ -78,10 +102,6 @@ statsList = document.getElementById('stats-list')
 //
 //
 //
-
-
-
-
 //       )
 //
 //         // box = document.createElement()
