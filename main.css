@@ -171,3 +171,25 @@ body {
     animation-play-state: running; */
     transition: 1s
 }
+
+
+#queryPoke {
+  display: block;
+  float: left;
+
+  border: 1px solid #e4030d;
+  border-radius: 10px;
+  background-color: #e4000f;
+
+  padding: 2%;
+  width: 25%;
+}
+
+#queryPoke input {
+  padding: 2%;
+
+}
+
+#queryPoke #query-submit {
+  float: right;
+}

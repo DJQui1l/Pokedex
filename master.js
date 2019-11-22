@@ -6,9 +6,6 @@ class Trainer {
 
   }
 
-
-  statsList = document.getElementById('stats-list')
-
   equipPokemon_ID(name){
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = () => { //made it an arrow function instead of anon function to keep 'this' bound to Trainer object
@@ -28,7 +25,8 @@ class Trainer {
         // let sprite = document.createElement('img')
         // sprite.src = `${chosenPoke.sprites}`
         // document.getElementById('sprite-container').appendChild(sprite)
-        let gifSprite = document.getElementsByClassName('carousel-image').src = `http://www.pokestadium.com/sprites/xy/${chosenPoke.name}.gif`
+        let gifSprite = document.getElementsByClassName('carousel-image')
+        .src = `http://www.pokestadium.com/sprites/xy/${chosenPoke.name}.gif`
         // document.getElementById('sprite-container').appendChild(gifSprite)
 
     //     document.addEventListener('DOMContentLoaded', function() {
@@ -43,10 +41,14 @@ class Trainer {
           chosenPoke.abilities.push(a)
 
 
-          let pudding = document.getElementById('ability-list')
-          pudding.innerText= `HP: ${chosenPoke.hp}`
+          let abilityList = document.getElementById('ability-list')
+          let li = document.createElement('li')
+          let img = document.createElement('img')
+          img.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
+          abilityList.innerText= ` ${chosenPoke.name}`
           abilityList.style.color= "white"
-          // abilityList.appendChild(li)
+          abilityList.appendChild(li)
+          abilityList.appendChild(img)
         }
 
 
@@ -65,10 +67,11 @@ class Trainer {
     for (let i = 0; i < 5;i++){
       if (this.team[i] == name){
         console.log(this.team[i])
-        return this.team[i]
+        // return this.team[i]
       }
     }
   }
+
 }
 
 class Pokemon {
@@ -141,3 +144,14 @@ start()
 let t1 = new Trainer('Red')
 // let poke1 = new Pokemon('bulbasaur')
 // let poke2 = new Pokemon('squirtle')
+
+function pokevalues(){
+  // var submitBtn = document.getElementById("query-submit")
+  var trainerNameValue = document.getElementById("trainer-name").value
+  console.log(trainerNameValue);
+  t1 = new Trainer(trainerNameValue)
+  var pokeNameValue = document.getElementById("poke1-input").value
+  t1.equipPokemon_ID(pokeNameValue)
+  return console.log(pokeNameValue);
+
+}

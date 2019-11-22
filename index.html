@@ -8,14 +8,11 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
       <!-- Compiled and minified JavaScript -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
   <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-
-
-
 
   <div id = "container-grid">
     <div><h1 id="title">Quill's Pokedex</h1></div>
@@ -39,23 +36,53 @@
     <div></div>
     <div></div>
     <div></div>
-
   </div>
 <!-- ------------- -->
 
-<div class="sprite-container">
-    <a class="carousel-item" href="#one!"><img class = "carousel-image"></a>
-    <a class="carousel-item" href="#two!"><img class = "carousel-image"></a>
-    <a class="carousel-item" href="#three!"><img class = "carousel-image"></a>
-    <a class="carousel-item" href="#four!"><img class = "carousel-image"></a>
-    <a class="carousel-item" href="#five!"><img class = "carousel-image"></a>
-  </div>
 <ul id = "ability-list"></ul>
 <ul id = "stats-list"></ul>
 
+<!-- ----------------------------------------- -->
+<form id = "queryPoke" action="index.html" method="post">
+
+<input id = "trainer-name" type ="text" name ="trainer name" placeholder = "Enter Your Trainer Name"><br>
+<input id = "poke1-input"type = "text" name ="poke1"  placeholder = "Enter Pokemon Name or ID"><br>
+<input id = "query-submit" type = "button" value="Submit" onclick="pokevalues()">
+
+</form>
+
+
+<!-- <h1>Adding 'a' and 'b'</h1>
+
+  a: <input type="number" name="a" id="a"><br>
+  b: <input type="number" name="b" id="b"><br>
+  <button onclick="add(document.getElementById('a').value,document.getElementById('b').value)">Add</button>
+
+
+<style media="screen">
+  input {
+    color: white;
+  }
+</style>
+<script>
+  function add(a,b) {
+    var sum = parseInt(a) + parseInt(b);
+    alert(sum);
+  }
+</script> -->
 
 
 
+
+
+
+
+
+
+
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
       <script type="text/javascript" src="master.js"></script>
 </body>
 
