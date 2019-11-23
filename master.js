@@ -28,25 +28,26 @@ class Trainer {
         // .src = `http://www.pokestadium.com/sprites/xy/${chosenPoke.name}.gif`
         // sprite.appendChild(gifSprite)
 
+        let abilityList = document.getElementById('ability-list')
+
         for (let i in data.abilities) {
-          let a = data.abilities[i].ability.name
-          chosenPoke.abilities.push(a)
-          console.log(a);
+          let ables = data.abilities[i].ability.name
+          chosenPoke.abilities.push(ables)
+          console.log(ables);
 
-          let abilityList = document.getElementById('ability-list')
-
-          let li = document.createElement('li')
-          li.innerText = data.abilities[i].ability.name
+        let li = document.createElement('li')
+        li.innerText = data.abilities[i].ability.name
 
 
-          // let img = document.createElement('img')
-          // img.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
-          // abilityList.innerText = ` ${chosenPoke.name}`
 
-          // abilityList.appendChild(li)
-          // abilityList.ush.appendChild(img)
+        abilityList.innerText = ` ${chosenPoke.name}`
+
+        abilityList.appendChild(li)
+
         }
-
+        let img = document.createElement('img')
+        img.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
+        abilityList.appendChild(img)
         this.team.push(chosenPoke);
       }
     }
