@@ -5,59 +5,63 @@
 
 /* ------------------------------- */
 @keyframes light-pulse {
-  0%{
-  filter: drop-shadow(0px 0px 6px #FFFF33);
-}
+  0% {
+    filter: drop-shadow(0px 0px 6px #FFFF33);
+  }
+
   100% {
     filter: drop-shadow(0px 0px 20px #FFFF33);
   }
 }
+
 /* ----------------------------------- */
-@keyframes floating{
-  0%{
-  transform: translateY(0px);
-}
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
 
   100% {
     transform: translateY(-30px);
   }
 }
 
-@keyframes fade-out{
-  0%{
-opacity: 1;
-}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
 
   100% {
     opacity: 0;
   }
 }
+
 /* --------------------- */
-@keyframes fade-in{
-  0%{
-opacity: 0;
-}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
 
   100% {
     opacity: 1;
   }
 }
+
 /* ------------------------- */
-@keyframes scale{
-    0%{
-  transform: scale(1);
+@keyframes scale {
+  0% {
+    transform: scale(1);
   }
 
-    100% {
-      transform: scale(1.05);
-    }
+  100% {
+    transform: scale(1.05);
+  }
 }
 
 body {
   margin: 0 auto;
   background-color: #101010;
   /* background-color: #000; */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /*
@@ -85,19 +89,17 @@ body {
   border: solid 1px;
 }
  */
-
 #container-grid {
-  display:none;
+  display: none;
 }
-
 
 #container-grid {
   grid-template-columns: 33% 33% 33%;
-  grid-template-rows: 33% 33% 33% ;
+  grid-template-rows: 33% 33% 33%;
   grid-template-areas:
-  " header header header"
-  " . lightning-bolt ."
-  " . . .";
+    " header header header"
+    " . lightning-bolt ."
+    " . . .";
   grid-gap: 9px;
 }
 
@@ -107,26 +109,20 @@ body {
    padding: 2%; */
 }
 
-
 #container-grid #title {
   grid-area: header;
   /* color: #383838; */
   color: #101010;
-
   display: none;
-
   font-family: Sun-Moon;
   text-align: center;
-
   width: 70%;
   font-size: 850%;
   margin: 14.7%;
   /* text-shadow: 0px 0px 3px #fff000; */
-
   /* background: -webkit-linear-gradient(#ff9900, #005aff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
-
   background: -webkit-linear-gradient(#ff9900, #005aff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -135,17 +131,15 @@ body {
 
 #lightningDiv {
   padding: 2%;
-    margin: 17.7% 0;
-  float:center;
+  margin: 17.7% 0;
+  float: center;
 }
-#lightning-bolt{
+
+#lightning-bolt {
   grid-area: lightning-bolt;
-  fill :#383838;
+  fill: #383838;
   /* fill: #fff000; */
-
-  display:block;
-
-
+  display: block;
   position: relative;
   top: 36.7%;
   left: 42%;
@@ -155,41 +149,103 @@ body {
   animation-play-state: pause; */
   /* animation-delay: 3s; */
   height: 15%;
-      width: 12%;
-
-
+  width: 12%;
   /* For clean hover transition */
   transition: 1s;
 }
 
-#lightning-bolt:hover{
-  cursor:url("C:\Users\djarvis\Documents\Class 27\NYCDA\projects\Pokedex\lightning-svgrepo-com.svg");
-    fill: #fff000;
-    filter: drop-shadow(0px 0px 15px #FFFF33);
-    transform: translateY(-25px);
-    /* animation: floating 2s infinite alternate ease-in-out;
+#lightning-bolt:hover {
+  cursor: url("C:\Users\djarvis\Documents\Class 27\NYCDA\projects\Pokedex\lightning-svgrepo-com.svg");
+  fill: #fff000;
+  filter: drop-shadow(0px 0px 15px #FFFF33);
+  transform: translateY(-25px);
+  /* animation: floating 2s infinite alternate ease-in-out;
     animation-play-state: running; */
-    transition: 1s
+  transition: 1s
 }
 
+#ability-list {
+  color: #EEE;
+}
 
+ /* --- QUEARY FORM GRID  ----  */
+ #collapseable-grid{
+
+   display: grid;
+   grid-template-areas:
+   " form pokeball1 "
+   " form pokeball2";
+   grid-template-columns: 75% 25%;
+   grid-template-rows: 50% 50%;
+   float: left;
+   margin: 0px 2%;
+   border: 1px solid #e4030d;
+   border-radius: 10px;
+   background-color: #080808;
+   padding: 17.5px;
+   width: 25%;
+
+   align-content: center;
+ }
 #queryPoke {
-  display: block;
+  grid-area: form;
+  /* display: block;
   float: left;
-
+  margin: 0px 2%;
   border: 1px solid #e4030d;
   border-radius: 10px;
-  background-color: #e4000f;
+  background-color: #080808;
+  padding: 20px;
+  width: 25%; */
+}
+#pokeballbox1{
+  display:inline-block;
+  grid-area: pokeball1;
+}
 
-  padding: 2%;
-  width: 25%;
+#pokeballbox2{
+  display:inline-block;
+  grid-area: pokeball2;
+}
+
+#pokeballbox1, #pokeballbox2 {
+  display: flex;
+
+  justify-content: center
+}
+
+#ball-1, #ball-2{
+  height: 50px;
+  width: 50px;
 }
 
 #queryPoke input {
-  padding: 2%;
-
+  padding: 3px;
+  text-align: center;
 }
 
-#queryPoke #query-submit {
-  float: right;
+#queryPoke input, textarea {
+  color: white;
+}
+
+#trainer-name:focus,
+#poke1-input:focus,
+#poke2-input:focus,
+#poke3-input:focus,
+#poke4-input:focus,
+#poke5-input:focus,
+#poke6-input:focus {
+  color: #fff000;
+  outline: #e4030d;
+}
+
+#query-submit {
+
+  width: 100%;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 4% 0;
+  background-color: red;
+  border-color: red;
+  color: #EEE;
 }

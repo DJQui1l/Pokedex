@@ -1,4 +1,3 @@
-
 class Trainer {
   constructor(name) {
     this.name = name
@@ -6,7 +5,7 @@ class Trainer {
 
   }
 
-  equipPokemon_ID(name){
+  equipPokemon(value) {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = () => { //made it an arrow function instead of anon function to keep 'this' bound to Trainer object
       if (xhttp.readyState == 4 && xhttp.status == 200) { //checks the readystate of xhttp
@@ -23,49 +22,53 @@ class Trainer {
         chosenPoke.sprites = data.sprites.front_default
 
         // let sprite = document.createElement('img')
-        // sprite.src = `${chosenPoke.sprites}`
+        // // sprite.src = `${chosenPoke.sprites}`
         // document.getElementById('sprite-container').appendChild(sprite)
-        let gifSprite = document.getElementsByClassName('carousel-image')
-        .src = `http://www.pokestadium.com/sprites/xy/${chosenPoke.name}.gif`
-        // document.getElementById('sprite-container').appendChild(gifSprite)
+        // let gifSprite = document.getElementsByClassName('carousel-image')
+        // .src = `http://www.pokestadium.com/sprites/xy/${chosenPoke.name}.gif`
+        // sprite.appendChild(gifSprite)
 
-    //     document.addEventListener('DOMContentLoaded', function() {
-    // var elems = document.querySelectorAll('.carousel');
-    // var instances = M.Carousel.init(elems, options);
-  // });
-
-
-        for (let i in data.abilities){
+        for (let i in data.abilities) {
           let a = data.abilities[i].ability.name
-          // a.replace('-',' ').charAt(0).toUpperCase()
           chosenPoke.abilities.push(a)
-
+          console.log(a);
 
           let abilityList = document.getElementById('ability-list')
-          let li = document.createElement('li')
-          let img = document.createElement('img')
-          img.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
-          abilityList.innerText= ` ${chosenPoke.name}`
-          abilityList.style.color= "white"
-          abilityList.appendChild(li)
-          abilityList.appendChild(img)
-        }
 
+          let li = document.createElement('li')
+          li.innerText = data.abilities[i].ability.name
+
+
+          // let img = document.createElement('img')
+          // img.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
+          // abilityList.innerText = ` ${chosenPoke.name}`
+
+          // abilityList.appendChild(li)
+          // abilityList.ush.appendChild(img)
+        }
 
         this.team.push(chosenPoke);
       }
     }
-    xhttp.open("GET", `https://fizal.me/pokeapi/api/v2/id/${name}.json`, true);
-    xhttp.send();
+    isNaN(value) ? xhttp.open('GET', `https://fizal.me/pokeapi/api/v2/name/${value}.json`)
+    : xhttp.open('GET', `https://fizal.me/pokeapi/api/v2/id/${value}.json`)
+    xhttp.send()
+
+    return isNaN(value) ? `${value} was added ${this.name}'s party!`
+    : `Pokemon with ID: ${value} was added to ${this.name}'s list of pokemon!`
   }
+
+
+
+
   //-------------------
   all() {
     return this.team
   }
   //------------------
-  get(name){
-    for (let i = 0; i < 5;i++){
-      if (this.team[i] == name){
+  get(name) {
+    for (let i = 0; i < 5; i++) {
+      if (this.team[i] == name) {
         console.log(this.team[i])
         // return this.team[i]
       }
@@ -75,83 +78,89 @@ class Trainer {
 }
 
 class Pokemon {
-  constructor(name){
+  constructor(name) {
     this.name = name
     this.abilities = [] //chosenPoke.abilities.push(data.abilities[i].ability.name)
   }
 }
+noRepeatObj = 0
+function pokeValues() {
+  // var submitBtn = document.getElementById("query-submit")
 
-// ----------- TRUE API POKEDEX -----------------
-//
-abilityList = document.getElementById('ability-list')
+  let trainerNameValue = document.getElementById("trainer-name").value
+  let pokeNameValue1 = document.getElementById("poke1-input").value
+
+  console.log(trainerNameValue.value);
+
+  if (noRepeatObj === 0){
+  t1 = new Trainer(trainerNameValue)
+  noRepeatObj+=1
+  }
+  // after submit make trainer value read only
+  t1.equipPokemon(pokeNameValue1)
+  console.log(t1)
+
+  console.log(pokeNameValue1)
+
+  return trainerNameValue
+
+}
+
 statsList = document.getElementById('stats-list')
 
-// queryPokemonAPI = async () => {
-  // pokeNum = prompt("Enter pokemon ID: ")
-//   let randPoke = Math.floor(Math.random() * 100) + 1
-// const url = `https://fizal.me/pokeapi/api/v2/id/${randPoke}.json`
-//   fetch(url)
-//     .then( resp => {
-//       return resp.json()
-//     })
-//     .then( data => {
-//         console.log(data)
-//          let pokemon = new Pokemon(data.name)
-//           pokemon.name = data.name
-//           pokemon.hp = data.stats[5].base_stat
-//           pokemon.attack = data.stats[4].base_stat
-//           pokemon.defense = data.stats[3].base_stat
-//
-//
-//
-//
-//       )
-//
-//         // box = document.createElement()
-// }
-
 // ------------ ANIMATIONS -------------------
-function start(){
+function start() {
   let clicklightning = document.getElementById('lightning-bolt');
   let clicktitle = document.getElementById('title');
   let clickgrid = document.getElementById('container-grid');
 
   clicklightning.addEventListener("click", function() {
 
-		clicklightning.style.animation = "fade-out 1s ease-out";
+    clicklightning.style.animation = "fade-out 1s ease-out";
 
     setTimeout(() => {
-			clicklightning.style.display = "none";
+      clicklightning.style.display = "none";
       clicktitle.style.display = "block";
       clicktitle.style.animation = "fade-in 1s ease-in, scale 4s ease-out";
-		},1004)
+    }, 1004)
 
-    setTimeout(() =>{
-        clicktitle.style.animation = "fade-out 1s ease-in, scale 4s ease-out";
-    },4000)
+    setTimeout(() => {
+      clicktitle.style.animation = "fade-out 1s ease-in, scale 4s ease-out";
+    }, 4000)
 
-    setTimeout(() =>{
-        clicktitle.style.display = "none";
-        clickgrid.style.display = "none";
+    setTimeout(() => {
+      clicktitle.style.display = "none";
+      clickgrid.style.display = "none";
 
-    },5000)
+    }, 5000)
 
   })
 }
-//-----------------------------------------------------
+
+// -------------START CODE ----------
 start()
 
-let t1 = new Trainer('Red')
-// let poke1 = new Pokemon('bulbasaur')
-// let poke2 = new Pokemon('squirtle')
+holdTrainerValue = null
+let abilityList = document.getElementById('ability-list')
+let submitBtn = document.getElementById('query-submit')
 
-function pokevalues(){
-  // var submitBtn = document.getElementById("query-submit")
-  var trainerNameValue = document.getElementById("trainer-name").value
-  console.log(trainerNameValue);
-  t1 = new Trainer(trainerNameValue)
-  var pokeNameValue = document.getElementById("poke1-input").value
-  t1.equipPokemon_ID(pokeNameValue)
-  return console.log(pokeNameValue);
+let formEvents = document.getElementById('queryPoke')
+    .addEventListener("keydown", function(event) {
+    // console.log(event.which)
+    if (event.which === 13 || submitBtn.addEventListener('click', () => {
+      console.log('clicked');
+    })) {
+      trainerValue = pokeValues()
+      queryPoke = document.getElementById("queryPoke")
+      queryTrainerName = document.getElementById("trainer-name")
 
-}
+
+      queryPoke.reset()
+
+        queryTrainerName.placeholder = trainerValue
+
+      queryTrainerName.style.color = "#fff000"
+      queryTrainerName.style.opacity = "75%"
+      queryTrainerName.setAttribute('readonly', true)
+    }
+  })
