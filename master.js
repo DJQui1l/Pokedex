@@ -5,6 +5,7 @@ class Trainer {
 
   }
 
+
   equipPokemon(value) {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = () => { //made it an arrow function instead of anon function to keep 'this' bound to Trainer object
@@ -29,26 +30,30 @@ class Trainer {
         // sprite.appendChild(gifSprite)
 
         let abilityList = document.getElementById('ability-list')
+        let spriteContainer = document.getElementById('SpriteContainer')
+
 
         for (let i in data.abilities) {
           let ables = data.abilities[i].ability.name
           chosenPoke.abilities.push(ables)
-          console.log(ables);
+          // console.log(ables);
 
-        let li = document.createElement('li')
-        li.innerText = data.abilities[i].ability.name
-
-
-
-        abilityList.innerText = ` ${chosenPoke.name}`
-
-        abilityList.appendChild(li)
-
+          // let li = document.createElement('li')
+          // li.innerText = data.abilities[i].ability.name
+          // abilityList.appendChild(li)
         }
-        let img = document.createElement('img')
-        img.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
-        abilityList.appendChild(img)
-        this.team.push(chosenPoke);
+        if (partySize != 6){
+          this.team.push(chosenPoke);
+          let img = document.createElement('img')
+          img.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
+
+          spriteContainer.appendChild(img)
+          img.style.animation = "drop-in 1s ease-in,fade-in 1s ease-in"
+
+          partySize += 1
+        } else {
+          alert("You've reached max party size!")
+        }
       }
     }
     isNaN(value) ? xhttp.open('GET', `https://fizal.me/pokeapi/api/v2/name/${value}.json`)
@@ -68,9 +73,10 @@ class Trainer {
   }
   //------------------
   get(name) {
-    for (let i = 0; i < 5; i++) {
+    for (let i in this.team) {
+      console.log(this.team[i])
       if (this.team[i] == name) {
-        console.log(this.team[i])
+
         // return this.team[i]
       }
     }
@@ -90,24 +96,28 @@ function pokeValues() {
 
   let trainerNameValue = document.getElementById("trainer-name").value
   let pokeNameValue1 = document.getElementById("poke1-input").value
+  let pokeNameValue2 = document.getElementById("poke2-input").value
+  let pokeNameValue3 = document.getElementById("poke3-input").value
+  let pokeNameValue4 = document.getElementById("poke4-input").value
+  let pokeNameValue5 = document.getElementById("poke5-input").value
+  let pokeNameValue6 = document.getElementById("poke6-input").value
 
-  console.log(trainerNameValue.value);
+  // console.log(trainerNameValue.value);
 
   if (noRepeatObj === 0){
   t1 = new Trainer(trainerNameValue)
-  noRepeatObj+=1
+  noRepeatObj += 1
   }
   // after submit make trainer value read only
+
   t1.equipPokemon(pokeNameValue1)
-  console.log(t1)
-
-  console.log(pokeNameValue1)
-
+  t1.equipPokemon(pokeNameValue2)
+  // console.log(t1)
+  // console.log(pokeNameValue1)
   return trainerNameValue
-
 }
+var partySize = 0
 
-statsList = document.getElementById('stats-list')
 
 // ------------ ANIMATIONS -------------------
 function start() {
@@ -142,6 +152,8 @@ function start() {
 start()
 
 holdTrainerValue = null
+
+statsList = document.getElementById('stats-list')
 let abilityList = document.getElementById('ability-list')
 let submitBtn = document.getElementById('query-submit')
 

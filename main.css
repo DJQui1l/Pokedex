@@ -57,6 +57,15 @@
   }
 }
 
+@keyframes drop-in {
+  0%{
+    transform: translateY(-20px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+
+}
 body {
   margin: 0 auto;
   background-color: #101010;
@@ -171,24 +180,31 @@ body {
  /* --- QUEARY FORM GRID  ----  */
  #collapseable-grid{
 
-   display: grid;
-   grid-template-areas:
-   " form pokeball1 "
-   " form pokeball2";
+   /* display: grid; */
+   /* grid-template-areas:
+    "form ."
+   "form pokeball-1"
+   "form pokeball-2"
+   "form pokeball-3"
+   "form pokeball-4"
+   "form pokeball-5"
+   "form pokeball-6"
+   "query-submit .";
    grid-template-columns: 75% 25%;
-   grid-template-rows: 50% 50%;
-   float: left;
-   margin: 0px 2%;
-   border: 1px solid #e4030d;
-   border-radius: 10px;
-   background-color: #080808;
-   padding: 17.5px;
-   width: 25%;
+   grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% ; */
 
-   align-content: center;
+    float: left;
+    margin: 0px 1%;
+    border: 1px solid #e4030d;
+    border-radius: 10px;
+    background-color: #080808;
+    padding: 2%;
+    width: 18%;
+    align-content: center;
  }
+
+
 #queryPoke {
-  grid-area: form;
   /* display: block;
   float: left;
   margin: 0px 2%;
@@ -198,23 +214,73 @@ body {
   padding: 20px;
   width: 25%; */
 }
+
+#trainer-name{
+  grid-area: trainer-name;
+}
+#poke1-input{
+  grid-area: poke1-input;
+}
+#poke2-input{
+  grid-area: pokeNameValue2-input;
+}
+#poke3-input{
+  grid-area: poke3-input;
+}
+#poke4-input{
+  grid-area: poke4-input;
+}
+#poke5-input{
+  grid-area: poke5-input;
+}
+#poke6-input{
+  grid-area: poke6-input;
+}
+
+
 #pokeballbox1{
   display:inline-block;
-  grid-area: pokeball1;
+  grid-area: pokeball-1;
 }
 
 #pokeballbox2{
   display:inline-block;
-  grid-area: pokeball2;
+  grid-area: pokeball-2;
+}
+#pokeballbox3{
+  display:inline-block;
+  grid-area: pokeball-3;
+}
+#pokeballbox4{
+  display:inline-block;
+  grid-area: pokeball-4;
+}
+#pokeballbox5{
+  display:inline-block;
+  grid-area: pokeball-5;
+}
+#pokeballbox6{
+  display:inline-block;
+  grid-area: pokeball-6;
 }
 
-#pokeballbox1, #pokeballbox2 {
+#pokeballbox1,
+#pokeballbox2,
+#pokeballbox3,
+#pokeballbox4,
+#pokeballbox5,
+#pokeballbox6 {
   display: flex;
-
-  justify-content: center
+  justify-content: center;
 }
 
-#ball-1, #ball-2{
+#ball-1,
+#ball-2,
+#ball-3,
+#ball-4,
+#ball-5,
+#ball-6
+{
   height: 50px;
   width: 50px;
 }
@@ -240,7 +306,7 @@ body {
 }
 
 #query-submit {
-
+  grid-area: query-submit;
   width: 100%;
   border-radius: 5px;
   margin: 5px 0;
@@ -249,3 +315,4 @@ body {
   border-color: red;
   color: #EEE;
 }
+/* -----------------CAROUSEL ---------------- */
