@@ -4,17 +4,17 @@
 <head>
   <meta charset="utf-8">
   <title>Darian's Pokedex</title>
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-  <!-- Compiled and minified JavaScript -->
-
   <link rel="stylesheet" href="main.css">
+
+  <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
 </head>
 
 <body>
 
-  <div id="container-grid">
+  <div id="title-grid">
     <div>
       <h1 id="title">Quill's Pokedex</h1>
     </div>
@@ -49,18 +49,10 @@
   <div id="collapseable-grid">
 
     <form id="queryPoke" action="index.html" method="post">
-
       <input id="trainer-name" type="text" name="trainer name" placeholder="Enter Your Trainer Name"><br><br>
       <input id = "poke1-input"type="text" name="poke1" placeholder="Enter Pokemon Name or ID" onfocus="this.placeholder"=''""><br>
-      <input id = "poke2-input"type = "text" name ="poke1"  placeholder = "Enter Pokemon Name or ID"><br>
-      <input id = "poke3-input"type = "text" name ="poke1"  placeholder = "Enter Pokemon Name or ID"><br>
-      <input id = "poke4-input"type = "text" name ="poke1"  placeholder = "Enter Pokemon Name or ID"><br>
-      <input id = "poke5-input"type = "text" name ="poke1"  placeholder = "Enter Pokemon Name or ID"><br>
-      <input id = "poke6-input"type = "text" name ="poke1"  placeholder = "Enter Pokemon Name or ID"><br>
-      <input id="query-submit" type="button" value="SUBMIT" onclick="pokeValues()" >
-
+      <input id = "query-submit "type="button" value = "SUBMIT" onclick = "pokeValues()"><br>
     </form>
-
   </div>
 
 
@@ -76,8 +68,11 @@
   </figure>
 </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script type="text/javascript" src="master.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
 </body>
 
 </html>

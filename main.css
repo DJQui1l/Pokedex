@@ -83,36 +83,12 @@ body {
   /* overflow: hidden; */
 }
 
-/*
- .poke-selector {
-  position: relative;
-  width: 25%;
-  border: solid 1px;
-  margin: 5%;
-  padding: 20%;
-}
 
- .poke-selector:after{
-  content: "";
+#title-grid {
   display: block;
-  padding-bottom: 100%;
-
 }
 
- .semiCircle {
-  background: #9e978e;
-   margin: 0 1em 1em 0;
-  display: inline-block;
-  border-bottom-left-radius: 90px;
-  border-bottom-right-radius: 90px;
-  border: solid 1px;
-}
- */
-#container-grid {
-  display: none;
-}
-
-#container-grid {
+#title-grid {
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: 33% 33% 33%;
   grid-template-areas:
@@ -122,13 +98,13 @@ body {
   grid-gap: 9px;
 }
 
-#container-grid div {
+#title-grid div {
   /* border: solid 1px;
   border-color: red;
    padding: 2%; */
 }
 
-#container-grid #title {
+#title-grid #title {
   grid-area: header;
   /* color: #383838; */
   color: #101010;
@@ -138,10 +114,6 @@ body {
   width: 70%;
   font-size: 850%;
   margin: 14.7%;
-  /* text-shadow: 0px 0px 3px #fff000; */
-  /* background: -webkit-linear-gradient(#ff9900, #005aff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
   background: -webkit-linear-gradient(#ff9900, #005aff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -189,20 +161,7 @@ body {
 
  /* --- QUEARY FORM GRID  ----  */
  #collapseable-grid{
-
-   /* display: grid; */
-   /* grid-template-areas:
-    "form ."
-   "form pokeball-1"
-   "form pokeball-2"
-   "form pokeball-3"
-   "form pokeball-4"
-   "form pokeball-5"
-   "form pokeball-6"
-   "query-submit .";
-   grid-template-columns: 75% 25%;
-   grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% ; */
-
+   display: none;
     float: left;
     margin: 0px 1%;
     border: 1px solid #e4030d;
@@ -233,70 +192,6 @@ body {
 #poke1-input{
   grid-area: poke1-input;
 }
-#poke2-input{
-  grid-area: pokeNameValue2-input;
-}
-#poke3-input{
-  grid-area: poke3-input;
-}
-#poke4-input{
-  grid-area: poke4-input;
-}
-#poke5-input{
-  grid-area: poke5-input;
-}
-#poke6-input{
-  grid-area: poke6-input;
-}
-
-
-#pokeballbox1{
-  display:inline-block;
-  grid-area: pokeball-1;
-}
-
-#pokeballbox2{
-  display:inline-block;
-  grid-area: pokeball-2;
-}
-#pokeballbox3{
-  display:inline-block;
-  grid-area: pokeball-3;
-}
-#pokeballbox4{
-  display:inline-block;
-  grid-area: pokeball-4;
-}
-#pokeballbox5{
-  display:inline-block;
-  grid-area: pokeball-5;
-}
-#pokeballbox6{
-  display:inline-block;
-  grid-area: pokeball-6;
-}
-
-#pokeballbox1,
-#pokeballbox2,
-#pokeballbox3,
-#pokeballbox4,
-#pokeballbox5,
-#pokeballbox6 {
-  display: flex;
-  justify-content: center;
-}
-
-#ball-1,
-#ball-2,
-#ball-3,
-#ball-4,
-#ball-5,
-#ball-6
-{
-  height: 50px;
-  width: 50px;
-}
-
 #queryPoke input {
   padding: 4px;
   text-align: center;
@@ -309,24 +204,19 @@ body {
 }
 
 #trainer-name:focus,
-#poke1-input:focus,
-#poke2-input:focus,
-#poke3-input:focus,
-#poke4-input:focus,
-#poke5-input:focus,
-#poke6-input:focus {
+#poke1-input:focus {
   color: #fff000;
   outline: #e4030d;
 }
 
 #query-submit {
-  grid-area: query-submit;
-  width: 100%;
+
+  /* width: 100%;
   border-radius: 5px;
   margin: 5px 0;
   padding: 4% 0;
   background-color: red;
   border-color: red;
-  color: #EEE;
+  color: #EEE; */
 }
 /* -----------------CAROUSEL ---------------- */

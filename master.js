@@ -5,7 +5,6 @@ class Trainer {
 
   }
 
-partySize = 0
   equipPokemon(value) {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = () => { //made it an arrow function instead of anon function to keep 'this' bound to Trainer object
@@ -13,7 +12,7 @@ partySize = 0
         let resp = xhttp.responseText
         let data = JSON.parse(resp)
 
-        console.log(data)
+        // console.log(data)
 
         let chosenPoke = new Pokemon(data.name)
         chosenPoke.id = data.id
@@ -38,10 +37,6 @@ partySize = 0
           let ables = data.abilities[i].ability.name
           chosenPoke.abilities.push(ables)
           // console.log(ables);
-
-          // let li = document.createElement('li')
-          // li.innerText = data.abilities[i].ability.name
-          // abilityList.appendChild(li)
         }
 
           this.team.push(chosenPoke);
@@ -49,129 +44,138 @@ partySize = 0
 
 
 
+          switch (partySize) {
+            case 0:
+            let pokeImg1 = document.getElementById('sprite-1')
+            pokeImg1.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
+            pokeImg1.style.animation = "drop-in 1s ease-in,fade-in 1s ease-in"
 
-              // let pokeImg1 = document.getElementById('sprite-1')
-              // pokeImg1.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
-              // pokeImg1.style.animation = "drop-in 1s ease-in,fade-in 1s ease-in"
+              pokeImg1.addEventListener("click", function() {
+                  clickedOn = true;
+                  if (clickedOn == true){
+                    console.log("testing");
+                    pokeImg1.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}-2.gif`
 
-
-            //   pokeImg1.addEventListener("click", function() {
-            //       clickedOn = true;
-            //       if (clickedOn == true){
-            //         console.log("testing");
-            //         pokeImg1.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}-3.gif`
-            //
-            //       setTimeout(()=>{
-            //         pokeImg1.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
-            //         clickedOn = false;
-            //       },2000)
-            //     }
-            //   }
-            // )
-            //
-            //
-            //   let pokeImg2 = document.getElementById('sprite-2')
-            //   pokeImg2.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
-            //   pokeImg2.style.animation = "drop-in 1s ease-in,fade-in 1s ease-in"
-            //
-            //
-            //
-            //   pokeImg2.addEventListener("click", function() {
-            //       clickedOn = true;
-            //       if (clickedOn == true){
-            //         console.log("testing");
-            //         pokeImg2.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}-3.gif`
-            //
-            //       setTimeout(()=>{
-            //         pokeImg2.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
-            //         clickedOn = false;
-            //       },2000)
-            //     }
-            //   }
-            // )
-            //
-            //
-            //   let pokeImg3 = document.getElementById('sprite-3')
-            //   pokeImg3.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
-            //   pokeImg3.style.animation = "drop-in 1s ease-in,fade-in 1s ease-in"
-            //
-            //
-            //   pokeImg3.addEventListener("click", function() {
-            //       clickedOn = true;
-            //       if (clickedOn == true){
-            //         console.log("testing");
-            //         pokeImg3.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}-3.gif`
-            //
-            //       setTimeout(()=>{
-            //         pokeImg3.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
-            //         clickedOn = false;
-            //       },1500)
-            //     }
-            //   }
-            // )
-            //
-            //
-            //   let pokeImg4 = document.getElementById('sprite-4')
-            //   pokeImg4.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
-            //   pokeImg4.style.animation = "drop-in 1s ease-in,fade-in 1s ease-in"
-            //
-            //
-            //   pokeImg4.addEventListener("click", function() {
-            //       clickedOn = true;
-            //       if (clickedOn == true){
-            //         console.log("testing");
-            //         pokeImg4.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}-3.gif`
-            //
-            //       setTimeout(()=>{
-            //         pokeImg4.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
-            //         clickedOn = false;
-            //       },2000)
-            //     }
-            //   }
-            // )
-            //
-            //
-            //   let pokeImg5 = document.getElementById('sprite-5')
-            //   pokeImg5.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
-            //   pokeImg5.style.animation = "drop-in 1s ease-in,fade-in 1s ease-in"
-            //
-            //
-            //   pokeImg5.addEventListener("click", function() {
-            //       clickedOn = true;
-            //       if (clickedOn == true){
-            //         console.log("testing");
-            //         pokeImg5.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}-3.gif`
-            //
-            //       setTimeout(()=>{
-            //         pokeImg5.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
-            //         clickedOn = false;
-            //       },2000)
-            //     }
-            //   }
-            // )
-            //
-            //   let pokeImg6 = document.getElementById('sprite-6')
-            //   pokeImg6.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
-            //   pokeImg6.style.animation = "drop-in 1s ease-in,fade-in 1s ease-in"
-            //
-            //
-            //   pokeImg6.addEventListener("click", function() {
-            //       clickedOn = true;
-            //       if (clickedOn == true){
-            //         console.log("testing");
-            //         pokeImg6.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}-3.gif`
-            //
-            //       setTimeout(()=>{
-            //         pokeImg6.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
-            //         clickedOn = false;
-            //       },2000)
-            //     }
-            //   }
-            // )
+                  setTimeout(()=>{
+                    pokeImg1.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
+                    clickedOn = false;
+                  },1600)
+                }
+              }
+            )
+            break;
+            case 1:
+              let pokeImg2 = document.getElementById('sprite-2')
+              pokeImg2.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
+              pokeImg2.style.animation = "drop-in 1s ease-in,fade-in 1s ease-in"
 
 
 
+              pokeImg2.addEventListener("click", function() {
+                  clickedOn = true;
+                  if (clickedOn == true){
+                    console.log("testing");
+                    pokeImg2.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}-2.gif`
 
+                  setTimeout(()=>{
+                    pokeImg2.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
+                    clickedOn = false;
+                  },1600)
+                }
+              }
+            )
+
+            break;
+            case 2:
+              let pokeImg3 = document.getElementById('sprite-3')
+              pokeImg3.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
+              pokeImg3.style.animation = "drop-in 1s ease-in,fade-in 1s ease-in"
+
+
+              pokeImg3.addEventListener("click", function() {
+                  clickedOn = true;
+                  if (clickedOn == true){
+                    console.log("testing");
+                    pokeImg3.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}-2.gif`
+
+                  setTimeout(()=>{
+                    pokeImg3.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
+                    clickedOn = false;
+                  },1600)
+                }
+              }
+            )
+
+
+
+            break;
+            case 3:
+              let pokeImg4 = document.getElementById('sprite-4')
+              pokeImg4.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
+              pokeImg4.style.animation = "drop-in 1s ease-in,fade-in 1s ease-in"
+
+
+              pokeImg4.addEventListener("click", function() {
+                  clickedOn = true;
+                  if (clickedOn == true){
+                    console.log("testing");
+                    pokeImg4.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}-2.gif`
+
+                  setTimeout(()=>{
+                    pokeImg4.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
+                    clickedOn = false;
+                  },1600)
+                }
+              }
+            )
+
+
+            break;
+            case 4:
+            let pokeImg5 = document.getElementById('sprite-5')
+            pokeImg5.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
+            pokeImg5.style.animation = "drop-in 1s ease-in,fade-in 1s ease-in"
+
+
+            pokeImg5.addEventListener("click", function() {
+                clickedOn = true;
+                if (clickedOn == true){
+                  console.log("testing");
+                  pokeImg5.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}-2.gif`
+
+                setTimeout(()=>{
+                  pokeImg5.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
+                  clickedOn = false;
+                },1600)
+              }
+            }
+          )
+
+            break;
+            case 5:
+              let pokeImg6 = document.getElementById('sprite-6')
+              pokeImg6.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
+              pokeImg6.style.animation = "drop-in 1s ease-in,fade-in 1s ease-in"
+
+
+              pokeImg6.addEventListener("click", function() {
+                  clickedOn = true;
+                  if (clickedOn == true){
+                    console.log("testing");
+                    pokeImg6.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}-2.gif`
+
+                  setTimeout(()=>{
+                    pokeImg6.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
+                    clickedOn = false;
+                  },1600)
+                }
+              }
+            )
+
+            break;
+            default:
+              console.log("Default switch-case activated");
+          }
 
               partySize += 1
               console.log("party size: ",partySize);
@@ -184,8 +188,6 @@ partySize = 0
     return isNaN(value) ? `${value} was added ${this.name}'s party!` :
       `Pokemon with ID: ${value} was added to ${this.name}'s list of pokemon!`
   }
-
-
 
 
   //-------------------
@@ -205,7 +207,6 @@ partySize = 0
       }
     }
   }
-
 }
 
 var partySize = 0
@@ -220,82 +221,19 @@ class Pokemon {
 //------------------------------
 noRepeatObj = 0
 
-slotEmpty1 = true
-slotEmpty2 = true
-slotEmpty3 = true
-slotEmpty4 = true
-slotEmpty5 = true
-slotEmpty6 = true
-
-
 function pokeValues() {
 
   let trainerNameValue = document.getElementById("trainer-name").value
-  let pokeNameValue1 = document.getElementById("poke1-input").value
-  let pokeNameValue2 = document.getElementById("poke2-input").value
-  let pokeNameValue3 = document.getElementById("poke3-input").value
-  let pokeNameValue4 = document.getElementById("poke4-input").value
-  let pokeNameValue5 = document.getElementById("poke5-input").value
-  let pokeNameValue6 = document.getElementById("poke6-input").value
+  let pokeNameValue = document.getElementById("poke1-input").value
 
   if (noRepeatObj === 0) {
     t1 = new Trainer(trainerNameValue)
     noRepeatObj += 1
   }
 
-  if (slotEmpty1 == true) {
 
-    t1.equipPokemon(pokeNameValue1)
+    t1.equipPokemon(pokeNameValue)
     console.log("pokemon equiped");
-
-
-    let pokeImg1 = document.getElementById('sprite-1')
-    pokeImg1.src = `https://projectpokemon.org/images/normal-sprite/${t1.get(pokeNameValue1)}.gif`
-    pokeImg1.style.animation = "drop-in 1s ease-in,fade-in 1s ease-in"
-
-    // pokeImg1.addEventListener("click", function() {
-    //       clickedOn = true;
-    //       if (clickedOn == true){
-    //         console.log("testing");
-    //         pokeImg1.src = `https://projectpokemon.org/images/normal-sprite/${pokeNameValue1}-3.gif`
-    //
-    //       setTimeout(()=>{
-    //         pokeImg1.src = `https://projectpokemon.org/images/normal-sprite/${pokeNameValue1}.gif`
-    //         clickedOn = false;
-    //       },2000)
-    //     }
-    //   })
-
-
-    slotEmpty1 = false
-  }
-  if (slotEmpty2 == true) {
-    t1.equipPokemon(pokeNameValue2)
-    slotEmpty2 =false
-
-  }
-  if (slotEmpty3 == true) {
-    t1.equipPokemon(pokeNameValue3)
-    slotEmpty3 = false
-
-  }
-  if (slotEmpty4 == true) {
-    t1.equipPokemon(pokeNameValue4)
-    slotEmpty4 = false
-
-  }
-   if (slotEmpty5 == true) {
-    t1.equipPokemon(pokeNameValue5)
-    slotEmpty5 = false
-
-  }
-   if (slotEmpty6 == true) {
-    t1.equipPokemon(pokeNameValue6)
-    slotEmpty6 = false
-  }
-  else{
-    console.log("Space it taken");
-  }
 
   return trainerNameValue
 }
@@ -307,7 +245,8 @@ function pokeValues() {
 function start() {
   let clicklightning = document.getElementById('lightning-bolt');
   let clicktitle = document.getElementById('title');
-  let clickgrid = document.getElementById('container-grid');
+  let clickgrid = document.getElementById('title-grid');
+  let collapseableGrid = document.getElementById('collapseable-grid');
 
   clicklightning.addEventListener("click", function() {
 
@@ -326,7 +265,11 @@ function start() {
     setTimeout(() => {
       clicktitle.style.display = "none";
       clickgrid.style.display = "none";
+      clicktitle.remove()
+      clickgrid.remove()
 
+      collapseableGrid.style.display = "block"
+      collapseableGrid.style.animation = "fade-in 1s ease-in"
     }, 5000)
 
   })
@@ -335,7 +278,7 @@ function start() {
 // -------------START CODE ----------
 start()
 
-holdTrainerValue = null
+holdTrainerValue = false
 
 statsList = document.getElementById('stats-list')
 let abilityList = document.getElementById('ability-list')
@@ -346,9 +289,7 @@ let formEvents = document.getElementById('queryPoke')
     // console.log(event.which)
 
     // ----SUBMIT ON ENTER OR CLICKED BUTTON
-    if (event.which === 13 || submitBtn.addEventListener('click', () => {
-        console.log('clicked');
-      })) {
+    if (event.which === 13) {
       trainerValue = pokeValues()
       queryPoke = document.getElementById("queryPoke")
       queryTrainerName = document.getElementById("trainer-name")
@@ -356,7 +297,10 @@ let formEvents = document.getElementById('queryPoke')
 
       queryPoke.reset()
       // after submit make trainer value read only
+      if (holdTrainerValue == false){
       queryTrainerName.placeholder = trainerValue
+      holdTrainerValue = true
+      }
 
       queryTrainerName.style.color = "#fff000"
       queryTrainerName.style.opacity = "75%"
