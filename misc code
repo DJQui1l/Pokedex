@@ -1,0 +1,71 @@
+---------misc JS code -----------
+
+
+// queryPokemonAPI = async () => {
+// pokeNum = prompt("Enter pokemon ID: ")
+//   let randPoke = Math.floor(Math.random() * 100) + 1
+// const url = `https://fizal.me/pokeapi/api/v2/id/${randPoke}.json`
+//   fetch(url)
+//     .then( resp => {
+//       return resp.json()
+//     })
+//     .then( data => {
+//         console.log(data)
+//          let pokemon = new Pokemon(data.name)
+//           pokemon.name = data.name
+//           pokemon.hp = data.stats[5].base_stat
+//           pokemon.attack = data.stats[4].base_stat
+//           pokemon.defense = data.stats[3].base_stat
+//
+//
+//
+//
+//       )
+//
+//         // box = document.createElement()
+// }
+
+
+//---------LOGS KEYDOWN EVENT DATA
+// document.addEventListener("keydown", function(event) {
+//   console.log(event.which);
+// })
+
+//---html
+---------POKEBALL IMAGES
+  <!-- <div id = "pokeballbox1"><img id = "ball-1" src = "https://icon-library.net/images/pokeball-icon-transparent/pokeball-icon-transparent-26.jpg"></div>
+  <div id = "pokeballbox2"><img id = "ball-2" src = "https://icon-library.net/images/pokeball-icon-transparent/pokeball-icon-transparent-26.jpg"></div>
+  <div id = "pokeballbox3"><img id = "ball-3" src = "https://icon-library.net/images/pokeball-icon-transparent/pokeball-icon-transparent-26.jpg"></div>
+  <div id = "pokeballbox4"><img id = "ball-4" src = "https://icon-library.net/images/pokeball-icon-transparent/pokeball-icon-transparent-26.jpg"></div>
+  <div id = "pokeballbox5"><img id = "ball-5" src = "https://icon-library.net/images/pokeball-icon-transparent/pokeball-icon-transparent-26.jpg"></div>
+  <div id = "pokeballbox6"><img id = "ball-6" src = "https://icon-library.net/images/pokeball-icon-transparent/pokeball-icon-transparent-26.jpg"></div> -->
+
+
+
+//----CSS
+
+/*
+ .poke-selector {
+  position: relative;
+  width: 25%;
+  border: solid 1px;
+  margin: 5%;
+  padding: 20%;
+}
+
+ .poke-selector:after{
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+
+}
+
+ .semiCircle {
+  background: #9e978e;
+   margin: 0 1em 1em 0;
+  display: inline-block;
+  border-bottom-left-radius: 90px;
+  border-bottom-right-radius: 90px;
+  border: solid 1px;
+}
+ */
