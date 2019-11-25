@@ -24,6 +24,16 @@
     transform: translateY(-30px);
   }
 }
+@keyframes floating2 {
+  0% {
+    transform: translateY(10px);
+  }
+
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
 
 @keyframes fade-out {
   0% {
@@ -198,18 +208,20 @@ body {
     border: 1px solid #e4030d;
     border-radius: 10px;
     background-color: #080808;
-    padding: 2%;
-    width: 18%;
+    padding: 1%;
+    width: 16.1%;
     align-content: center;
+
+    animation: floating2 3s infinite alternate ease-in-out;
  }
 
 
 #queryPoke {
-  /* display: block;
+   /* display: block;
   float: left;
   margin: 0px 2%;
   border: 1px solid #e4030d;
-  border-radius: 10px;
+    border-radius: 10px;
   background-color: #080808;
   padding: 20px;
   width: 25%; */
@@ -286,12 +298,14 @@ body {
 }
 
 #queryPoke input {
-  padding: 3px;
+  padding: 4px;
   text-align: center;
 }
 
 #queryPoke input, textarea {
   color: white;
+  font-size: .9em;
+  opacity: 75%;
 }
 
 #trainer-name:focus,
