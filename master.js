@@ -28,14 +28,10 @@ class Trainer {
         // let sprite = document.createElement('img')
         // sprite.src = `${chosenPoke.sprites}`
         // document.getElementById('sprite-container').appendChild(sprite)
-        let gifSprite = document.getElementsByClassName('carousel-image').src = `http://www.pokestadium.com/sprites/xy/${chosenPoke.name}.gif`
-        // document.getElementById('sprite-container').appendChild(gifSprite)
 
-    //     document.addEventListener('DOMContentLoaded', function() {
-    // var elems = document.querySelectorAll('.carousel');
-    // var instances = M.Carousel.init(elems, options);
-  // });
-
+        let gifSprite = document.createElement('img')
+        gifSprite.src = `http://www.pokestadium.com/sprites/xy/${chosenPoke.name}.gif`
+        document.getElementById('sprite-container').appendChild(gifSprite)
 
         for (let i in data.abilities){
           let a = data.abilities[i].ability.name
