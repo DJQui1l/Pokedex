@@ -1,3 +1,10 @@
+class Pokemon {
+  constructor(name) {
+    this.name = name
+    this.abilities = [] //chosenPoke.abilities.push(data.abilities[i].ability.name)
+  }
+}
+
 class Trainer {
   constructor(name) {
     this.name = name
@@ -209,12 +216,7 @@ class Trainer {
 
 var partySize = 0
 //--------------------------
-class Pokemon {
-  constructor(name) {
-    this.name = name
-    this.abilities = [] //chosenPoke.abilities.push(data.abilities[i].ability.name)
-  }
-}
+
 
 //------------------------------
 noRepeatObj = 0
