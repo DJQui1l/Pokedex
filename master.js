@@ -30,7 +30,7 @@ class Trainer {
         chosenPoke.sprites = data.sprites.front_default
 
         // let sprite = document.createElement('img')
-        // // sprite.src = `${chosenPoke.sprites}`
+        // sprite.src = `${chosenPoke.sprites}`
         // document.getElementById('sprite-container').appendChild(sprite)
         // let gifSprite = document.getElementsByClassName('carousel-image')
         // .src = `http://www.pokestadium.com/sprites/xy/${chosenPoke.name}.gif`
@@ -43,7 +43,20 @@ class Trainer {
         for (let i in data.abilities) {
           let ables = data.abilities[i].ability.name
           chosenPoke.abilities.push(ables)
+
+          var able1 = document.createElement('li')
+          var able2 = document.createElement('li')
+          var able3 = document.createElement('li')
+
+            able1.style.listStyleType = 'none';
+            able2.style.listStyleType = 'none';
+            able3.style.listStyleType = 'none';
+
+          able1.innerText = data.abilities[0].ability.name
+          able2.innerText = data.abilities[1].ability.name
+          able3.innerText = data.abilities[2].ability.name
           // console.log(ables);
+
         }
 
           this.team.push(chosenPoke);
@@ -54,12 +67,16 @@ class Trainer {
             let pokeImg1 = document.getElementById('sprite-1')
             pokeImg1.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
             pokeImg1.style.animation = "drop-in 1s ease-in,fade-in 1s ease-in"
+            //
+
 
               pokeImg1.addEventListener("click", function() {
                   clickedOn = true;
                   if (clickedOn == true){
                     console.log("testing");
                     pokeImg1.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}-2.gif`
+
+
 
                   setTimeout(()=>{
                     pokeImg1.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
@@ -73,8 +90,6 @@ class Trainer {
               let pokeImg2 = document.getElementById('sprite-2')
               pokeImg2.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
               pokeImg2.style.animation = "drop-in 1s ease-in,fade-in 1s ease-in"
-
-
 
               pokeImg2.addEventListener("click", function() {
                   clickedOn = true;
@@ -93,9 +108,9 @@ class Trainer {
             break;
             case 2:
               let pokeImg3 = document.getElementById('sprite-3')
+                let displayStats3 = document.getElementById('displayInfo-1')
               pokeImg3.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
               pokeImg3.style.animation = "drop-in 1s ease-in,fade-in 1s ease-in"
-
 
               pokeImg3.addEventListener("click", function() {
                   clickedOn = true;
@@ -116,9 +131,9 @@ class Trainer {
             break;
             case 3:
               let pokeImg4 = document.getElementById('sprite-4')
+                let displayStats4 = document.getElementById('displayInfo-1')
               pokeImg4.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
               pokeImg4.style.animation = "drop-in 1s ease-in,fade-in 1s ease-in"
-
 
               pokeImg4.addEventListener("click", function() {
                   clickedOn = true;
@@ -138,8 +153,10 @@ class Trainer {
             break;
             case 4:
             let pokeImg5 = document.getElementById('sprite-5')
+              let displayStats5 = document.getElementById('displayInfo-1')
             pokeImg5.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
             pokeImg5.style.animation = "drop-in 1s ease-in,fade-in 1s ease-in"
+
 
 
             pokeImg5.addEventListener("click", function() {
@@ -159,10 +176,11 @@ class Trainer {
             break;
             case 5:
               let pokeImg6 = document.getElementById('sprite-6')
+                let displayStats6 = document.getElementById('displayInfo-1')
               pokeImg6.src = `https://projectpokemon.org/images/normal-sprite/${chosenPoke.name}.gif`
               pokeImg6.style.animation = "drop-in 1s ease-in,fade-in 1s ease-in"
 
-
+            
               pokeImg6.addEventListener("click", function() {
                   clickedOn = true;
                   if (clickedOn == true){
@@ -268,7 +286,7 @@ function start() {
       clicktitle.remove()
       clickgrid.remove()
 
-      collapseableGrid.style.display = "block"
+      collapseableGrid.style.display = "flex"
       collapseableGrid.style.animation = "fade-in 1s ease-in"
     }, 5000)
 

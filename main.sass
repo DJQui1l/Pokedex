@@ -63,7 +63,7 @@ body
   /* overflow: hidden;
 
 #title-grid
-  display: block
+  display: none
   grid-template-columns: 33% 33% 33%
   grid-template-rows: 33% 33% 33%
   grid-template-areas: " header header header" " . lightning-bolt ." " . . ."
@@ -137,15 +137,15 @@ body
 /* --- QUEARY FORM GRID  ----
 
 #collapseable-grid
-  display: none
-  float: left
-  margin: 0px 1%
-  border: 1px solid #e4030d
-  border-radius: 10px
-  background-color: #080808
-  padding: 1%
-  width: 16.1%
-  align-content: center
+  /* display: none;
+   *float: left;
+   *margin: 0px 1%;
+   *border: 1px solid #e4030d;
+   *border-radius: 10px;
+   *background-color: #080808;
+   *padding: 1%;
+   *width: 16.1%;
+   *align-content: center;
 
   /* animation: floating2 3s infinite alternate ease-in-out;
 
@@ -182,7 +182,29 @@ textarea
 
 #collapseable-grid
   grid-area: form
-  border: 1px solid red
+
+  /* border: 1px solid red;
+  display: flex
+  justify-content: center
+  animation: 1s ease-in 0s 1 normal none running fade-in
+  width: 96%
+  margin: 2%
+
+#queryPoke
+  margin: 2%
+  border: 1px solid #e4030d
+  width: 25%
+  padding: 2% 2%
+  border-radius: 10px
+
+#query-submit
+  width: 100%
+  background-color: #e4030d
+  border-color: #e4030d
+  border-radius: 10px
+  padding: 2%
+  margin: 7px 1%
+  opacity: 100%
 
 #spriteBox
   /* border: 1px solid red;
@@ -190,8 +212,8 @@ textarea
   display: inline-block
   align-content: center
 
-  img
-    /* height: 100%;
-     *width: 100%;
+#SpriteContainer
+  display: flex
+  width: 100%
 
-/* -----------------C
+/* -----------------CAROUSEL ----------------

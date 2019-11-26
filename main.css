@@ -85,7 +85,7 @@ body {
 
 
 #title-grid {
-  display: block;
+  display: none;
 }
 
 #title-grid {
@@ -163,7 +163,7 @@ body {
 
  /* --- QUEARY FORM GRID  ----  */
  #collapseable-grid{
-   display: none;
+   /* display: none;
     float: left;
     margin: 0px 1%;
     border: 1px solid #e4030d;
@@ -171,7 +171,7 @@ body {
     background-color: #080808;
     padding: 1%;
     width: 16.1%;
-    align-content: center;
+    align-content: center; */
 
     /* animation: floating2 3s infinite alternate ease-in-out; */
  }
@@ -217,11 +217,34 @@ body {
   " . . . ";
 }
   #collapseable-grid {
-
-     grid-area: form;
-     border: 1px solid red;
+    grid-area: form;
+    /* border: 1px solid red; */
+    display: flex;
+   justify-content: center;
+   animation: 1s ease-in 0s 1 normal none running fade-in;
+   width: 96%;
+   margin: 2%;
 
   }
+
+  #queryPoke {
+    margin: 2%;
+    border: 1px solid #e4030d;
+    width: 25%;
+    padding: 2% 2%;
+    border-radius: 10px;
+  }
+
+  #query-submit{
+    width: 100%;
+    background-color: #e4030d;
+    border-color: #e4030d;
+    border-radius: 10px;
+    padding: 2%;
+    margin: 7px 1%;
+    opacity: 100%;
+  }
+
   #spriteBox{
     /* border: 1px solid red; */
 
@@ -229,8 +252,8 @@ body {
     align-content: center;
   }
 
-  #spriteBox img {
-    /* height: 100%;
-    width: 100%; */
+#SpriteContainer {
+  display:flex;
+  width: 100%;
   }
 /* -----------------CAROUSEL ---------------- */
